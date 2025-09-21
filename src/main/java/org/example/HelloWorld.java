@@ -11,13 +11,17 @@ public class HelloWorld {
     public static void main(String[] args) {
         HelloWorld app = new HelloWorld();
 
-        // Use two methods as required
+        // Use the original two methods
         String greeting = app.generateGreeting("World");
         String farewell = app.generateFarewell("User");
 
-        // Use ASCII Renderer to display messages
+        // NEW: Use native language greeting
+        String nativeGreeting = app.getGreeting("hungarian") + " Világ!";
+
+        // Use ASCII Renderer to display all messages
         app.renderMessage(greeting);
         app.renderMessage(farewell);
+        app.renderMessage(nativeGreeting);  // NEW LINE
     }
 
     // Method 1 - will be modified in branchA
@@ -28,6 +32,23 @@ public class HelloWorld {
     // Method 2 - will be modified in branchB
     public String generateFarewell(String name) {
         return "Goodbye " + name + "!";
+    }
+
+    // NEW METHOD: Your original getGreeting method for native languages
+    public String getGreeting(String language) {
+        switch (language.toLowerCase()) {
+            case "english":
+            case "eng":
+                return "Hello";
+            case "hungarian":
+            case "hun":
+                return "Szia";
+            case "arabic":
+            case "ar":
+                return "Marhaba";
+            default:
+                return "Hello";
+        }
     }
 
     // ASCII Renderer method using the external library
