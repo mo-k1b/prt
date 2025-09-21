@@ -11,26 +11,22 @@ public class HelloWorld {
     public static void main(String[] args) {
         HelloWorld app = new HelloWorld();
 
-        // Use two methods as required
         String greeting = app.generateGreeting("World");
         String farewell = app.generateFarewell("User");
 
-        // Use ASCII Renderer to display messages
         app.renderMessage(greeting);
         app.renderMessage(farewell);
     }
 
-    // Method 1 - will be modified in branchA
     public String generateGreeting(String name) {
-        return "Hello " + name + "!";
+        String username = System.getProperty("user.name");
+        return "Hello " + name + "! Current user: " + username;
     }
 
-    // Method 2 - will be modified in branchB
     public String generateFarewell(String name) {
         return "Goodbye " + name + "!";
     }
 
-    // ASCII Renderer method using the external library
     public void renderMessage(String message) {
         IRender render = new Render();
         IContextBuilder builder = render.newBuilder();
