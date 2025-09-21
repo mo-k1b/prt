@@ -27,7 +27,8 @@ public class HelloWorld {
 
     // Method 2 - will be modified in branchB
     public String generateFarewell(String name) {
-        return "Goodbye " + name + "!";
+        java.time.LocalTime now = java.time.LocalTime.now();
+        return "Goodbye " + name + "! Current time: " + now;
     }
 
     // ASCII Renderer method using the external library
