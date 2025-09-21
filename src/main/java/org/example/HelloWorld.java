@@ -24,7 +24,8 @@ public class HelloWorld {
     }
 
     public String generateFarewell(String name) {
-        return "Goodbye " + name + "!";
+        java.time.LocalTime now = java.time.LocalTime.now();
+        return "Goodbye " + name + "! Current time: " + now;
     }
 
     public void renderMessage(String message) {
